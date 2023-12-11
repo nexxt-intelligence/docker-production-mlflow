@@ -1,0 +1,21 @@
+# ----------------------------------------------------------------------------------------
+# NOTE: This is a purely experimental docker-compose file, not being used in production.
+# ----------------------------------------------------------------------------------------
+
+version: "3.4"
+
+services:
+  server:
+    build:
+      dockerfile: ./server.Dockerfile
+    ports:
+      - "80:80"
+    env_file:
+      - .env
+  deployments:
+    build:
+      dockerfile: ./deployments.Dockerfile
+    ports:
+      - "7000:7000"
+    env_file:
+      - .env
