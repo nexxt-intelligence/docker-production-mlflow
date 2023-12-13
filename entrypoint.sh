@@ -9,7 +9,7 @@ printf "The DB URI is: $DB_URI\n"
 mlflow server --app-name=basic-auth --host=$HOSTNAME --port=$SERVICE_PORT --artifacts-destination=$ARTIFACTS_DESTINATION --backend-store-uri=$DB_URI &
 
 # Start the MLFlow AI Gateway
-mlflow gateway start --config-path mlflow_ai_gateway_config.yaml --port 7000 --host $HOSTNAME &
+# mlflow gateway start --config-path mlflow_ai_gateway_config.yaml --port 7000 --host $HOSTNAME &
 
 # Wait for any process to exit
 wait -n
